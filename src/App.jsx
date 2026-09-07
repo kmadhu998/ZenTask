@@ -2,12 +2,16 @@ import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes/AppRoutes";
 import { TaskProvider } from "./context/TaskContext";
 
-export default function App() {
+function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter
+      basename={import.meta.env.BASE_URL.replace(/\/$/, "")}
+    >
       <TaskProvider>
         <AppRoutes />
       </TaskProvider>
     </BrowserRouter>
   );
 }
+
+export default App;
