@@ -1,0 +1,428 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap");
+
+.login-page,
+.login-page * {
+  box-sizing: border-box;
+}
+
+.login-page {
+  --ink: #16211d;
+  --ink-soft: #1e2f28;
+  --paper: #f5f6f2;
+  --paper-raised: #ffffff;
+  --sage: #4a6b5c;
+  --sage-deep: #33493e;
+  --gold: #c9a15c;
+  --line: #dde2dc;
+  --line-soft: #e8ebe5;
+  --muted: #6b776f;
+  --muted-light: #aebcb3;
+  --error: #b5484b;
+  --error-bg: #fbeceb;
+
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+/* ---------- Left brand panel ---------- */
+
+.login-brand {
+  position: relative;
+  flex: 0 0 44%;
+  display: flex;
+  align-items: center;
+  padding: 4rem 4.5rem;
+  background: linear-gradient(165deg, var(--ink) 0%, var(--ink-soft) 100%);
+  color: var(--paper);
+  overflow: hidden;
+}
+
+.login-brand-content {
+  position: relative;
+  z-index: 2;
+  max-width: 26rem;
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--gold);
+  margin-bottom: 3.5rem;
+}
+
+.brand-mark {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-family: "Inter", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--paper);
+}
+
+.brand-heading {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 2.75rem;
+  line-height: 1.15;
+  font-weight: 500;
+  margin: 0 0 1.25rem;
+  color: var(--paper);
+}
+
+.brand-subtitle {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: var(--muted-light);
+  margin: 0 0 2rem;
+  max-width: 24rem;
+}
+
+.brand-footnote {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--gold);
+  border-top: 1px solid rgba(201, 161, 92, 0.28);
+  padding-top: 1.25rem;
+  max-width: 22rem;
+}
+
+.brand-rings {
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 420px;
+  height: 420px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ---------- Right form panel ---------- */
+
+.login-form-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background: var(--paper);
+}
+
+.login-form-wrapper {
+  width: 100%;
+  max-width: 24rem;
+}
+
+.mobile-brand-lockup {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--sage-deep);
+  margin-bottom: 2rem;
+}
+
+.mobile-brand-lockup .brand-mark {
+  color: var(--sage-deep);
+}
+
+.mobile-brand-lockup .brand-name {
+  color: var(--ink);
+}
+
+.login-form-header {
+  margin-bottom: 2.25rem;
+}
+
+.login-form-header h2 {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.85rem;
+  font-weight: 500;
+  margin: 0 0 0.4rem;
+  color: var(--ink);
+}
+
+.login-form-header p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.form-field label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input-wrapper:focus-within {
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgba(74, 107, 92, 0.14);
+}
+
+.input-wrapper.input-error {
+  border-color: var(--error);
+}
+
+.input-wrapper.input-error:focus-within {
+  box-shadow: 0 0 0 3px rgba(181, 72, 75, 0.13);
+}
+
+.input-icon {
+  position: absolute;
+  left: 0.85rem;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 0.75rem 0.9rem 0.75rem 2.55rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--ink);
+  border-radius: 8px;
+}
+
+.input-wrapper input::placeholder {
+  color: var(--muted-light);
+}
+
+.toggle-visibility {
+  position: absolute;
+  right: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  color: var(--muted);
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.toggle-visibility:hover {
+  color: var(--ink);
+}
+
+.toggle-visibility:focus-visible,
+.link-button:focus-visible,
+.submit-button:focus-visible,
+.google-button:focus-visible,
+.checkbox-field input:focus-visible + .checkbox-box {
+  outline: 2px solid var(--sage);
+  outline-offset: 2px;
+}
+
+.field-error {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--error);
+  margin: 0;
+}
+
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.87rem;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-field input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.checkbox-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  border: 1.5px solid var(--line);
+  border-radius: 5px;
+  background: var(--paper-raised);
+  color: var(--paper-raised);
+  flex-shrink: 0;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.checkbox-field input:checked + .checkbox-box {
+  background: var(--sage);
+  border-color: var(--sage);
+}
+
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 0.87rem;
+  font-weight: 500;
+  color: var(--sage-deep);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.link-button:hover {
+  text-decoration: underline;
+}
+
+.submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-top: 0.25rem;
+  background: var(--sage-deep);
+  color: var(--paper);
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.submit-button:hover {
+  background: var(--ink);
+}
+
+.submit-button:active {
+  transform: translateY(1px);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 0.2rem 0;
+  color: var(--muted-light);
+  font-size: 0.82rem;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line-soft);
+}
+
+.google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.google-button:hover {
+  border-color: var(--muted-light);
+  background: var(--line-soft);
+}
+
+.signup-line {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 1.75rem 0 0;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .login-page {
+    flex-direction: column;
+  }
+
+  .login-brand {
+    display: none;
+  }
+
+  .mobile-brand-lockup {
+    display: flex;
+  }
+
+  .login-form-section {
+    padding: 2.5rem 1.5rem 3rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .login-form-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .form-options {
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .submit-button,
+  .google-button,
+  .input-wrapper,
+  .toggle-visibility {
+    transition: none;
+  }
+}
